@@ -1,0 +1,2 @@
+# samplesite
+Django mini project
