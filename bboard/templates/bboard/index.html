@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asosiy sahifa</title>
+</head>
+<body>
+    <h1>Yangi Reklamalar</h1>
+    {% for bb in bbs %}
+    <div>
+        <h2>{{ bb.title }}</h2>
+        <p>{{ bb.content }}</p>
+        <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
