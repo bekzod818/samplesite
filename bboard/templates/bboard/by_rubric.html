@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asosiy sahifa</title>
+    <title>{{ current_rubric.name }}</title>
 </head>
 <body>
-    <h1>Yangi Reklamalar</h1>
+    <h1>Reklamalar ro'yhati</h1>
+    <h2>Bo'lim {{ current_rubric.name }}</h2>
     <div>
         <a href="/bboard/">Asosiy Sahifa</a>
         {% for rubric in rubrics %}
@@ -18,7 +19,6 @@
     <div>
         <h2>{{ bb.title }}</h2>
         <p>{{ bb.content }}</p>
-        <p><a href="/bboard/{{ bb.rubric.pk }}/">{{ bb.rubric.name }}</a></p>
         <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
     </div>
     {% endfor %}
