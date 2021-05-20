@@ -9,16 +9,17 @@
 <body>
     <h1>Yangi Reklamalar</h1>
     <div>
-        <a href="/bboard/">Asosiy Sahifa</a>
+        <a href="{% url 'index' %}">Asosiy Sahifa</a>
         {% for rubric in rubrics %}
-        <a href="/bboard/{{ rubric.pk }}">{{ rubric.name }}</a>
+        <a href="{% url 'by_rubric' rubric.pk %}">{{ rubric.name }}</a>
         {% endfor %}
+        <a href="{% url 'add' %}">Reklama Qo'shish</a>
     </div>
     {% for bb in bbs %}
     <div>
         <h2>{{ bb.title }}</h2>
         <p>{{ bb.content }}</p>
-        <p><a href="/bboard/{{ bb.rubric.pk }}/">{{ bb.rubric.name }}</a></p>
+        <p><a href="/bboard/{{ bb.rubric.pk }}">{{ bb.rubric.name }}</a></p>
         <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
     </div>
     {% endfor %}
