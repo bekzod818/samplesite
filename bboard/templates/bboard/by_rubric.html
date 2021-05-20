@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ current_rubric.name }}</title>
-</head>
-<body>
-    <h1>Reklamalar ro'yhati</h1>
-    <h2>Bo'lim {{ current_rubric.name }}</h2>
-    <div>
-        <a href="{% url 'index' %}">Asosiy Sahifa</a>
-        {% for rubric in rubrics %}
-        <a href="{% url 'by_rubric' rubric.pk %}">{{ rubric.name }}</a>
-        {% endfor %}
-    </div>
-    {% for bb in bbs %}
-    <div>
-        <h2>{{ bb.title }}</h2>
-        <p>{{ bb.content }}</p>
-        <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
-    </div>
-    {% endfor %}
-</body>
-</html>
+{% extends 'layout/base.html' %}
+{% block title %}{{ current_rubric.name }}{% endblock %}
+
+{% block content %}
+<h1>Bo'lim: {{ current_rubric.name }}</h1>
+{% for bb in bbs %}
+<div>
+    <h2>{{ bb.title }}</h2>
+    <p>{{ bb.content }}</p>
+    <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
+</div>
+{% endfor %}
+{% endblock %}

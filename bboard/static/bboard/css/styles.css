@@ -1,0 +1,101 @@
+body {
+    background-color: #333;
+    color: lightcyan;
+}
+header h1 {
+    font-size: 40pt;
+    text-transform: uppercase;
+    text-align: center;
+}
+nav {
+    font-size: 16pt;
+    width: 20%;
+    float: left;
+    position: fixed;
+}
+nav a {
+    display: block;
+    margin: 20px 30px;
+    text-decoration: none;
+    color: rgb(74, 224, 28);
+    cursor: progress;
+}
+section {   
+    width: 60%;
+    float: left;
+    margin-left: 25%;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: rgb(233, 196, 34);
+    cursor: progress;
+}
+a:hover {
+	color: bisque;
+    text-transform: uppercase;
+	text-decoration: overline;
+}
+div{
+    border: 2px solid tomato;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+}
+h1 {
+    text-align: center;
+}
+
+.form-input {
+    width: 300px;
+    font-size: 16px;
+}
+
+input.button{
+    position: absolute;
+    left: 80%;
+    top: 80%;
+}
+
+.button { 
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+
+  }
+
+.button:hover {
+  background-color: #3ceba5;
+  box-shadow: 0px 15px 20px rgba(46, 229, 156, 0.596);
+  color: #333;
+  transform: translateY(-7px);
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+footer {
+    float: right;
+	box-sizing: border-box;
+	padding: 5px;
+	color: white;
+	font-size: 14px;
+	text-align: center;
+	overflow: hidden;
+}

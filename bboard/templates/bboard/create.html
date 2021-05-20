@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reklama Qo'shish</title>
-</head>
-<body>
-    <h1>Reklama Qo'shish</h1>
-    <div>
-        <a href="{% url 'index' %}">Asosiy sahifa</a>
-        {% for rubric in rubrics %}
-        <a href="{% url 'by_rubric' rubric.pk %}">{{ rubrics.name }}</a>
-        {% endfor %}
-    </div>
-    <form method="POST">
+{% extends 'layout/base.html' %}
+
+{% block title %}Reklama Qo'shish{% endblock %}
+
+{% block content %}
+<div>
+    <h1>
+        Reklama Qo'shish
+    </h1>
+    <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Qo'shish">
+        <!-- {{ form.as_p }} -->
+        {% for f in form %}
+        <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
+        {% endfor %}
+        <input type="submit" class="button" value="Qo'shish">
     </form>
-</body>
-</html>
+</div>
+{% endblock %}
